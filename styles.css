@@ -2,5 +2,155 @@
     margin:0px;
     padding: 0px;
     box-sizing: border-box;
-    background-color: blueviolet;
 }
+@font-face {
+    font-family: kanit-Regular;
+    src: url(fonts/Kanit-Regular.ttf);
+}
+@font-face {
+    font-family:monoton-Regular ;
+    src: url(fonts/Monoton-Regular.ttf);
+}
+body {
+    background-color: #374151;
+}
+.container{
+    width: 800px;
+
+    margin: 30px auto;
+}
+.startPage {
+    display: flex;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.gameName p{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    word-spacing: 40px;
+    font-family: monoton-Regular;
+    font-size: 5rem;
+    padding: 2rem 7rem;
+}
+.playerSelectContainer {
+    color: #94a3b8;
+    font-family: kanit-Regular;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 1rem;
+    background-color: #374151;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
+}
+.playerSelectContainer div:nth-child(3) {
+    font-size: 1rem;
+}
+.playerSelectContainer div:nth-child(2) {
+    display: flex;
+    gap: 20px;
+    
+}
+.selectSignButton {
+    width: 110px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px black;
+}
+.selectSignButton:hover {
+    box-shadow: none;
+
+}
+.selectSignButton:focus {
+    box-shadow: none;
+}
+#startButton {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
+    background-color: #fbbf24;
+    font-family: kanit-Regular;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 10px 40px;
+}
+#startButton:hover {
+    box-shadow: none;
+    background-color: #fcd34d;
+}
+
+.gamePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+.resetButtonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+}
+.resetButtonContainer div img {
+    width: 70px;
+  
+}
+#resetButton img {
+    width: 70px;
+}
+#resetButton {
+    background-color: #374151;
+    width: 77px;
+    height: 77px;
+    border:none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+#resetButton:hover {
+    box-shadow: none;
+    border: 1px solid black;
+}
+.gameContainer{
+    /* width: 500px;
+    height: 500px; */
+    display:grid;
+    grid-template-columns: repeat(3,120px) ;
+    grid-template-rows: repeat(3,120px) ;
+    gap:30px;
+} 
+.gameRectangle {
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
+    /* width: 100px;
+    height: 100px; */
+}
+.gameScoreContainer{
+    display:flex;
+    gap:20px
+}
+.gameScoreContainerinfo{
+    font-family: kanit-Regular;
+    font-weight: bold;
+    width: 200px;
+    height: 70px;
+    background-color: #fbbf24;
+    text-align: center;
+    padding: 0.3rem;
+    border:none;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+.gameScoreContainerinfo p:nth-child(2) {
+    font-size: 1.5rem;
+}
+
+.gameInfoContainer {
+    display: none;
+}
++
