@@ -11,10 +11,9 @@
         <div class="startPage">
             <div class="gameName"><p>TIC TAC TOE</p></div>
             <div class="playerSelectContainer">
-                <div>PICK PLAYER 1 SIGN</div>
                 <div>
-                    <button class="selectSignButton" id="x"><img src="svg/close_FILL0_wght400_GRAD0_opsz24.svg" alt="x" ></button>
-                    <button class="selectSignButton" id="o"><img src="svg/radio_button_unchecked_FILL0_wght400_GRAD0_opsz24.svg" alt="o"></button>
+                    <button class="selectSignButton" id="x"  value="x" ><img src="svg/close_FILL0_wght400_GRAD0_opsz24.svg" alt="x"></button>
+                    <button class="selectSignButton" id="o" value="o"><img src="svg/radio_button_unchecked_FILL0_wght400_GRAD0_opsz24.svg" alt="o"></button>
                 </div>
                 <div>X GOES FIRST</div>
             </div>
@@ -22,13 +21,13 @@
                 <button id="startButton">Start Game</button>
             </div>
         </div>
-        <div class="gamePage">
+        <div class="gamePage" style="display: none;">
             <div class="resetButtonContainer">
-                <div><img src="svg/close_FILL0_wght400_GRAD0_opsz24.svg" alt="x" >
-                    <img src="svg/radio_button_unchecked_FILL0_wght400_GRAD0_opsz24.svg" alt="o" ></div>
-                <button id="resetButton"><img src="svg/restart_alt_FILL0_wght400_GRAD0_opsz24.svg" alt="resesat"></button> 
+                <button id="nextRoundButton">Next Round</button>
+                <button id="newGameButton">New Game</button>
             </div>
             <div class="gameContainer">
+                <!-- <div class="gameRectangle"></div>
                 <div class="gameRectangle"></div>
                 <div class="gameRectangle"></div>
                 <div class="gameRectangle"></div>
@@ -36,30 +35,24 @@
                 <div class="gameRectangle"></div>
                 <div class="gameRectangle"></div>
                 <div class="gameRectangle"></div>
-                <div class="gameRectangle"></div>
-                <div class="gameRectangle"></div>
+                <div class="gameRectangle"></div> -->
             </div>
             <div class="gameScoreContainer">
                 <div class ="gameScoreContainerinfo" id="playerXinfo">
-                    <p>PLAYER X</p>
-                    <p>8</p>
+                    <p id="playerx">PLAYER X </p>
+                    <p id="playerxscore"></p></p>
                 </div>
                 <div class ="gameScoreContainerinfo" id="tieInfo">
-                    <p>TIE</p>
-                    <P>0</P>
+                    <p id="tie">TIE</p>
+                    <P id="tiecore"></P>
                 </div>
                 <div class ="gameScoreContainerinfo" id="playerOinfo">
-                    <p>PLAYER O</p>
-                    <p>4</p>
+                    <p id="playero">PLAYER O</p>
+                    <p id="playeroscore"></p>
                 </div>
-            </div>
-            <div class="gameInfoContainer">
-                <p>X Wins!</p>
-                <button id="nextRoundButon">Next Round</button>
-                <button id="newGameButton">New Game</button>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

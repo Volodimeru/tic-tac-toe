@@ -16,12 +16,10 @@ body {
 }
 .container{
     width: 800px;
-
     margin: 30px auto;
 }
 .startPage {
     display: flex;
-    display: none;
     flex-direction: column;
     align-items: center;
     gap: 30px;
@@ -32,14 +30,14 @@ body {
     word-spacing: 40px;
     font-family: monoton-Regular;
     font-size: 5rem;
-    padding: 2rem 7rem;
+    padding: 2rem 6rem;
 }
 .playerSelectContainer {
     color: #94a3b8;
     font-family: kanit-Regular;
     font-weight: bold;
     font-size: 1.5rem;
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: #374151;
     width: 500px;
     display: flex;
@@ -49,18 +47,11 @@ body {
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
 }
-.playerSelectContainer div:nth-child(3) {
-    font-size: 1rem;
-}
-.playerSelectContainer div:nth-child(2) {
-    display: flex;
-    gap: 20px;
-    
-}
 .selectSignButton {
     width: 110px;
     border-radius: 10px;
     box-shadow: 3px 3px 5px black;
+    background-color: #374151;
 }
 .selectSignButton:hover {
     box-shadow: none;
@@ -71,7 +62,7 @@ body {
 }
 #startButton {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
-    background-color: #fbbf24;
+    background-color: #34C3BE;
     font-family: kanit-Regular;
     font-weight: bold;
     font-size: 1.2rem;
@@ -80,7 +71,7 @@ body {
 }
 #startButton:hover {
     box-shadow: none;
-    background-color: #fcd34d;
+    background-color: #4be1dc;
 }
 
 .gamePage {
@@ -96,13 +87,36 @@ body {
     align-items: center;
  
 }
-.resetButtonContainer div img {
-    width: 70px;
-  
+#nextRoundButton {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
+    background-color: #34C3BE;
+    font-family: kanit-Regular;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 10px 40px;
 }
-#resetButton img {
-    width: 70px;
+#nextRoundButton:hover {
+    background-color: #4be1dc;
+    box-shadow: none;
+    cursor:pointer;
+    
 }
+#newGameButton {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
+    background-color: #34C3BE;
+    font-family: kanit-Regular;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 10px 40px;
+}
+#newGameButton:hover {
+    background-color: #4be1dc;
+    box-shadow: none;
+    cursor:pointer;
+}
+
 #resetButton {
     background-color: #374151;
     width: 77px;
@@ -116,41 +130,53 @@ body {
     border: 1px solid black;
 }
 .gameContainer{
-    /* width: 500px;
-    height: 500px; */
+    width: 30vw;
+    height: 30vw;
     display:grid;
-    grid-template-columns: repeat(3,120px) ;
-    grid-template-rows: repeat(3,120px) ;
-    gap:30px;
+    grid-template-columns: repeat(3,1fr) ;
+    grid-template-rows: repeat(3,1fr) ;
+    gap:2rem;
 } 
-.gameRectangle {
+.square {
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
-    /* width: 100px;
-    height: 100px; */
+    cursor:pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .gameScoreContainer{
+    width: 100%;
     display:flex;
-    gap:20px
+    justify-content: space-between;
+    align-items: center;
 }
 .gameScoreContainerinfo{
     font-family: kanit-Regular;
     font-weight: bold;
     width: 200px;
     height: 70px;
-    background-color: #fbbf24;
+    font-size: 1.2rem;
     text-align: center;
     padding: 0.3rem;
     border:none;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
-.gameScoreContainerinfo p:nth-child(2) {
-    font-size: 1.5rem;
+#playerXinfo {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(255, 0, 0, 0.5);
+    text-shadow: rgba(255, 0, 0, 0.5) 1px 0 5px;
 }
+#tieInfo {
+    box-shadow: 5px -5px 10px rgba(52, 195, 190, 0.5), -5px 5px 10px rgba(52, 195, 190, 0.5);
+    text-shadow: rgba(52, 195, 190, 0.5) 1px 0 5px;
+}
+#playerOinfo {
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5),5px -5px 10px rgba(251, 191, 36, 0.5);
+    text-shadow: rgba(251, 191, 36, 0.5) 1px 0 5px;
 
-.gameInfoContainer {
-    display: none;
 }
-+
+.gameInfoContainer {
+    display: flex;
+}
