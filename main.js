@@ -25,12 +25,16 @@ const Gameboard = (()=> {
         render();
     }
     const reset = () => {
-        displayController.resetMessageBox();
+        displayController.resetMessageBox("#tie","TIE","#tieInfo","#374151");
+        displayController.resetMessageBox("#playerx","PLAYER X",'#playerXinfo',"#374151");
+        displayController.resetMessageBox("#playero", "PLAYER O",'#playerOinfo',"#374151");
         gameboard = ["","","","","","","","","",];
     }
     const newGame = () => {
         displayController.resetMessageBox();
-        displayController.resetScoreBox();
+        displayController.resetScoreBox("#playerxscore",'#playerXinfo');
+        displayController.resetScoreBox("#playeroscore",'#playerOinfo');
+        displayController.resetScoreBox("#tiecore","#tieInfo");
         if (Game.getPlayers()) {
             Game.getPlayers().forEach(player => {
                 player.resetscore();
@@ -133,21 +137,13 @@ const displayController = (()=> {
         document.querySelector(playerElementId).innerHTML = message;
         document.querySelector(scoreElementId).innerHTML = score;
     }
-    const resetMessageBox = () =>{
-        document.querySelector("#tie").innerHTML = "TIE"
-        document.querySelector("#tieInfo").style.backgroundColor = "#374151"
-        document.querySelector("#playerx").innerHTML = "PLAYER X";
-        document.querySelector('#playerXinfo').style.backgroundColor = "#374151";
-        document.querySelector("#playero").innerHTML = "PLAYER O";
-        document.querySelector('#playerOinfo').style.backgroundColor = "#374151"; 
+    const resetMessageBox = (messageBoxId, resetText, playerInfoId,color) =>{
+        document.querySelector(messageBoxId).innerHTML = resetText;
+        document.querySelector(playerInfoId).style.backgroundColor = color;
     }
-    const resetScoreBox = () => {
-        document.querySelector("#playerxscore").innerHTML = "";
-        document.querySelector('#playeroscore').innerHTML = "";
-        document.querySelector("#tiecore").innerHTML = "";
-        document.querySelector("#tieInfo").style.backgroundColor = "#374151"
-        document.querySelector('#playerXinfo').style.backgroundColor = "#374151";
-        document.querySelector('#playerOinfo').style.backgroundColor = "#374151"; 
+    const resetScoreBox = (playerxcoreID, playerinfoId) => {
+        document.querySelector(playerxcoreID).innerHTML = "";
+        document.querySelector(playerinfoId).style.backgroundColor = "#374151";
     }
     return {
         renderMessageforWin,
