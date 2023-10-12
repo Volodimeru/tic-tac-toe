@@ -3,6 +3,9 @@ const startPage = document.querySelector(".startPage");
 const gamePage = document.querySelector('.gamePage');
 const resetButton = document.querySelector('#nextRoundButton');
 const gameInfoContainer = document.querySelectorAll('.gameInfoContainer')
+const xName = document.querySelector("#xName");
+const oName = document.querySelector('#oName');
+const warning = document.querySelector("#warning");
 
 const Gameboard = (()=> {
     let gameboard = ["","","","","","","","","",];
@@ -31,7 +34,6 @@ const Gameboard = (()=> {
         gameboard = ["","","","","","","","","",];
     }
     const newGame = () => {
-        displayController.resetMessageBox();
         displayController.resetScoreBox("#playerxscore",'#playerXinfo');
         displayController.resetScoreBox("#playeroscore",'#playerOinfo');
         displayController.resetScoreBox("#tiecore","#tieInfo");
@@ -54,7 +56,7 @@ const Gameboard = (()=> {
     }
 })();
 
-const createPlayer = (sign, score) => {
+const createPlayer = (sign, score, name) => {
     const getscore = () => score;
     const giveScore = () => score++;
     const resetscore = () => {
@@ -63,6 +65,7 @@ const createPlayer = (sign, score) => {
     return {
         score,
         sign,
+        name,
         giveScore,
         getscore,
         resetscore,
@@ -79,8 +82,8 @@ const Game = (()=> {
     const start = () => {
         if (!gameOver && !players) {
         players = [
-          createPlayer("X", 0),
-          createPlayer("O", 0),
+          createPlayer("X", 0, xName.value.toUpperCase() ),
+          createPlayer("O", 0, oName.value.toUpperCase()),
         ]}
         currentPlayerIndex = 0;
         gameOver = false;
@@ -101,12 +104,12 @@ const Game = (()=> {
             roundOver = true;
             if (currentPlayerIndex === 0){
                 players[0].giveScore();
-                displayController.renderMessageforWin(`PLAYER ${players[0].sign} WIN!`, "#playerx",`${players[0].getscore()}`,"#playerxscore" )
+                displayController.renderMessageforWin(` ${players[0].name} WINS!`, "#playerx",`${players[0].getscore()}`,"#playerxscore" )
                 document.querySelector('#playerXinfo').style.backgroundColor = "red";
             } else if 
                     (currentPlayerIndex === 1) {
                     players[1].giveScore();
-                    displayController.renderMessageforWin(`PLAYER ${players[1].sign} WIN!`, "#playero",`${players[1].getscore()}`,"#playeroscore" )
+                    displayController.renderMessageforWin(` ${players[1].name} WINS!`, "#playero",`${players[1].getscore()}`,"#playeroscore" )
                     document.querySelector('#playerOinfo').style.backgroundColor = "#fbbf24";
                 }
             } else if (checkForTie(Gameboard.getGameboard())) {
@@ -177,9 +180,17 @@ function checkForWin(board) {
 }
 
 startButton.addEventListener('click', () => {
-    Game.start();
-    startPage.style.display = "none";
-    gamePage.style.display = "flex";
+    if (xName.value !== "" && oName.value !== ""){
+        Game.start();
+        startPage.style.display = "none";
+        gamePage.style.display = "flex";  
+    }else if
+        (xName.value !== "" || oName.value !== "" ){
+        warning.innerHTML = "ENTER SECOND NAME PLEASE"
+        warning.style.color = "red";
+    }else{
+        warning.style.color = "red";
+    }
 })
 
 resetButton.addEventListener('click', () => {
