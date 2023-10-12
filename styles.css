@@ -55,7 +55,6 @@ body {
 }
 .selectSignButton:hover {
     box-shadow: none;
-
 }
 .selectSignButton:focus {
     box-shadow: none;
@@ -73,7 +72,6 @@ body {
     box-shadow: none;
     background-color: #4be1dc;
 }
-
 .gamePage {
     display: flex;
     flex-direction: column;
@@ -85,7 +83,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
- 
 }
 #nextRoundButton {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
@@ -99,8 +96,7 @@ body {
 #nextRoundButton:hover {
     background-color: #4be1dc;
     box-shadow: none;
-    cursor:pointer;
-    
+    cursor:pointer; 
 }
 #newGameButton {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),-5px -5px 10px rgba(0, 0, 0, 0.5);
@@ -116,7 +112,6 @@ body {
     box-shadow: none;
     cursor:pointer;
 }
-
 #resetButton {
     background-color: #374151;
     width: 77px;
@@ -175,7 +170,6 @@ body {
 #playerOinfo {
     box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.5),5px -5px 10px rgba(251, 191, 36, 0.5);
     text-shadow: rgba(251, 191, 36, 0.5) 1px 0 5px;
-
 }
 .gameInfoContainer {
     display: flex;
